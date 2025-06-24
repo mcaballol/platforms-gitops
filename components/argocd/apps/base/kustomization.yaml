@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - tenants-applicationset.yaml
+  - tenants-project.yaml
