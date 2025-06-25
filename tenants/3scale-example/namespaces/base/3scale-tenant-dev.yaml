@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/display-name: "3scale"
+    openshift.io/description: "Red Hat 3scale API Management"
+#    openshift.io/node-selector: node-role.kubernetes.io/worker-3scale=
+  name: 3scale-tenant-dev

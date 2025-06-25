@@ -5,6 +5,7 @@ resources:
   - rhbk.yaml
   - 3scale.yaml
   - 3scale-apicast.yaml
+  - 3scale-tenant-dev.yaml
   #- object-datastore.yaml
 
 commonAnnotations:
