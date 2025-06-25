@@ -5,17 +5,3 @@ namespace: 3scale
 resources:
   - ../../base
   - 3scale-instance.yaml
-#dev tenant
-  - tenant-dev.yaml
-  - secret-dev-admin.yaml
-
-configurations:
-  - var-config.yaml
-vars:
-  - name: DOMAIN
-    objref:
-      apiVersion: apps.3scale.net/v1alpha1
-      kind: APIManager
-      name: apimanager-noprod
-    fieldref:
-      fieldpath: spec.wildcardDomain
