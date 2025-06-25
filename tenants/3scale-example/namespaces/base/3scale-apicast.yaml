@@ -4,5 +4,5 @@ metadata:
   annotations:
     openshift.io/display-name: "APIcast gateway"
     openshift.io/description: "Red Hat Integration - 3scale APIcast gateway"
-    openshift.io/node-selector: node-role.kubernetes.io/worker-3scale=
+#    openshift.io/node-selector: node-role.kubernetes.io/worker-3scale=
   name: apicast-gateway

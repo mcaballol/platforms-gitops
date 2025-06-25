@@ -4,5 +4,5 @@ metadata:
   annotations:
     openshift.io/display-name: "Keycloak"
     openshift.io/description: "Red Hat build of Keycloak"
-    openshift.io/node-selector: node-role.kubernetes.io/worker-keycloak=
+#    openshift.io/node-selector: node-role.kubernetes.io/worker-keycloak=
   name: keycloak
