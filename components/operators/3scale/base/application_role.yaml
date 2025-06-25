@@ -1,0 +1,28 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: hook-role
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+rules:
+  - apiGroups: ["operators.coreos.com"]
+    resources: ["subscriptions"]
+    verbs: ["get", "list"]
+  - apiGroups: ["operators.coreos.com"]
+    resources: ["clusterserviceversions"]
+    verbs: ["get", "list"]
+  - apiGroups: ["apps.3scale.net"]
+    resources: ["apimanagers"]
+    verbs: ["get", "list"]
+  - apiGroups: ["capabilities.3scale.net"]
+    resources: ["tenants"]
+    verbs: ["get", "list"]
+  - apiGroups: ["capabilities.3scale.net"]
+    resources: ["applicationauths"]
+    verbs: ["get", "list", "delete"]
+  - apiGroups: ["capabilities.3scale.net"]
+    resources: ["products"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "create", "delete"]

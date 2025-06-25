@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: keycloak
 
 resources:
-  - ../../../../components/operators/rhbk/overlays/stable-v26.0
+  - ../../../../../components/operators/rhbk/overlays/stable-v26.2

@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: 3scale
+
+resources:
+  - ../../../../../components/operators/3scale/overlays/threescale-2.15
