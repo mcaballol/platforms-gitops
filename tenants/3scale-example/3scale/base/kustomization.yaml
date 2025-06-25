@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: 3scale
 
 resources:
-  - ../../../../../components/operators/3scale/overlays/threescale-2.15
+  - ../../../../components/operators/3scale/overlays/threescale-2.15
