@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: apicast-gateway
 
 resources:
-  - ../../../../../components/operators/3scale-apicast/overlays/threescale-2.15
+  - ../../../../components/operators/3scale-apicast/overlays/threescale-2.15
