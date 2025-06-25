@@ -5,9 +5,9 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
   name: apicast-operator
 spec:
-  channel: threescale-2.15
+  channel: change-me
   installPlanApproval: Automatic
   name: apicast-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  startingCSV: apicast-operator.v0.12.3
+  startingCSV: change-me

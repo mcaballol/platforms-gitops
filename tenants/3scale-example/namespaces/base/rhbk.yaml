@@ -5,5 +5,4 @@ metadata:
     openshift.io/display-name: "Keycloak"
     openshift.io/description: "Red Hat build of Keycloak"
     openshift.io/node-selector: node-role.kubernetes.io/worker-keycloak=
-    argocd.argoproj.io/sync-wave: "0"
   name: keycloak

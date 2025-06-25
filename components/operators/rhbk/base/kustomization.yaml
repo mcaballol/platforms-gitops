@@ -5,3 +5,4 @@ bases:
 resources:
   - operator_operatorgroup.yaml  
   - operator_post-hook.yaml
+  - operator_subscription.yaml

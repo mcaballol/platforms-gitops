@@ -4,3 +4,6 @@ resources:
   - application_service-account.yaml
   - application_role.yaml
   - application_role-binding.yaml
+
+commonAnnotations:
+    argocd.argoproj.io/sync-wave: "3"

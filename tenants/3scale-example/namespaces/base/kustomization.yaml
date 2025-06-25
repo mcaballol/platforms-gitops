@@ -6,3 +6,6 @@ resources:
   - 3scale
   - 3scale-apicast
   #- object-datastore.yaml
+
+commonAnnotations:
+    argocd.argoproj.io/sync-wave: "0"
