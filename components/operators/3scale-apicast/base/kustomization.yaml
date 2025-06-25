@@ -1,8 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
-  - ../../middleware-base
 resources:
+  - ../../operator-base
   - operator_operatorgroup.yaml
   - operator_post-hook.yaml
   - operator_subscription.yaml
