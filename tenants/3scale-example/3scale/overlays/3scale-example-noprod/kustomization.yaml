@@ -6,7 +6,7 @@ resources:
   - ../../base
   - 3scale-instance.yaml
 #dev tenant
-  - tenant-dev.yaml
+#  - tenant-dev.yaml
   - secret-dev-admin.yaml
 
 configurations:
