@@ -4,3 +4,7 @@ metadata:
   name: apimanager-noprod
 spec:
   wildcardDomain: apps.cluster-rd4mr.dynamic.redhatworkshops.io
+  system:
+    fileStorage:
+      persistentVolumeClaim:
+        storageClassName: ocs-external-storagecluster-cephfs
