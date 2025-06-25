@@ -5,3 +5,7 @@ resources:
 #dev tenant
   - tenant-dev.yaml
   - secret-dev-admin.yaml
+#qa tenant
+  - tenant-qa.yaml
+  - secret-qa-admin.yaml
+  - secret-qa-tenant.yaml
