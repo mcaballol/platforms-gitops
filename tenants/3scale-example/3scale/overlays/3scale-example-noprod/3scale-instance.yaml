@@ -1,0 +1,6 @@
+kind: APIManager
+apiVersion: apps.3scale.net/v1alpha1
+metadata:
+  name: apimanager-noprod
+spec:
+  wildcardDomain: apps.cluster-rd4mr.dynamic.redhatworkshops.io
