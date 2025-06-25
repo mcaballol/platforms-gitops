@@ -2,11 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-#dev tenant
   - dev-tenant.yaml
   - dev-admin-secret.yaml
   - dev-tenant-secret.yaml
-#qa tenant
   - qa-tenant.yaml
   - qa-admin-secret.yaml
   - qa-tenant-secret.yaml
