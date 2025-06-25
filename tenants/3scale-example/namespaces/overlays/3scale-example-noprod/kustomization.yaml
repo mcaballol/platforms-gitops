@@ -2,3 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
+  - 3scale-tenant-dev.yaml
+  - 3scale-tenant-qa.yaml
+
+
+commonAnnotations:
+    argocd.argoproj.io/sync-wave: "0"
