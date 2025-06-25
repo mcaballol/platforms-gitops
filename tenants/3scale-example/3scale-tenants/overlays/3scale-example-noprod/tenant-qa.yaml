@@ -1,7 +1,7 @@
 apiVersion: capabilities.3scale.net/v1alpha1
 kind: Tenant
 metadata:
-  name: dev-tenant
+  name: qa-tenant
   namespace: 3scale-tenant-qa
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
