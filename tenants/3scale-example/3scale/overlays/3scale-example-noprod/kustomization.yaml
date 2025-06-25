@@ -9,7 +9,8 @@ resources:
   - tenant-dev.yaml
   - secret-dev-admin.yaml
 
-
+configurations:
+  - var-config.yaml
 vars:
   - name: DOMAIN
     objref:
