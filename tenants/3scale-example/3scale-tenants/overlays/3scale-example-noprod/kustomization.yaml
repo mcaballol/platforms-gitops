@@ -4,8 +4,8 @@ kind: Kustomization
 resources:
 #dev tenant
   - dev-tenant.yaml
-  - dev-admin-tenant.yaml
   - dev-admin-secret.yaml
+  - dev-tenant-secret.yaml
 #qa tenant
   - qa-tenant.yaml
   - qa-admin-secret.yaml
