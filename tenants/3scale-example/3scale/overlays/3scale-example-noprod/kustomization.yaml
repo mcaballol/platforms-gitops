@@ -5,3 +5,6 @@ namespace: 3scale
 resources:
   - ../../base
   - 3scale-instance.yaml
+
+commonAnnotations:
+    argocd.argoproj.io/sync-wave: "4"
