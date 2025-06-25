@@ -3,9 +3,10 @@ kind: Kustomization
 
 resources:
 #dev tenant
-  - tenant-dev.yaml
-  - secret-dev-admin.yaml
+  - dev-tenant.yaml
+  - dev-admin-tenant.yaml
+  - dev-admin-secret.yaml
 #qa tenant
-  - tenant-qa.yaml
-  - secret-qa-admin.yaml
-  - secret-qa-tenant.yaml
+  - qa-tenant.yaml
+  - qa-admin-secret.yaml
+  - qa-tenant-secret.yaml
