@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - dev-tenant.yaml
   - dev-admin-secret.yaml
-#  - dev-tenant-secret.yaml
+  - dev-tenant-secret.yaml
   - qa-tenant.yaml
   - qa-admin-secret.yaml
-#  - qa-tenant-secret.yaml
+  - qa-tenant-secret.yaml
