@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
-  wildcardDomain: apps.cluster-x8cq8.dynamic.redhatworkshops.io
+  wildcardDomain: apps.cluster-f78kj.dynamic.redhatworkshops.io
   system:
     fileStorage:
       persistentVolumeClaim:
