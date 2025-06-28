@@ -4,6 +4,7 @@ metadata:
   name: post-sync-check-master-provider
   annotations:
     argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "3"
 
 spec:
   backoffLimit: 3
