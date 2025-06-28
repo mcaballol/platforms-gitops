@@ -5,7 +5,7 @@ metadata:
 rules:
   - apiGroups: [""]
     resources: ["secrets"]
-    verbs: ["get", "list", "create"]
+    verbs: ["get", "list", "create","patch"]
   - apiGroups: ["route.openshift.io"]
     resources: ["routes"]
-    verbs: ["get", "list", "create"]
+    verbs: ["get", "list", "create","patch"]
