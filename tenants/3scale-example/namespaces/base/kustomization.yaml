@@ -5,7 +5,7 @@ resources:
   - rhbk.yaml
   - 3scale.yaml
   - 3scale-apicast.yaml
-  #- object-datastore.yaml
+  - postgresql.yaml
 
 commonAnnotations:
     argocd.argoproj.io/sync-wave: "-1"
