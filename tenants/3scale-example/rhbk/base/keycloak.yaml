@@ -1,0 +1,15 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: keycloak
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  instances: 0
+  http:
+    httpEnabled: true
+  hostname:
+    hostname: ""
+  proxy:
+    headers: xforwarded #forwarded
