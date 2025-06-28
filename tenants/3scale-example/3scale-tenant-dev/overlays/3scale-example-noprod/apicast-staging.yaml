@@ -24,7 +24,7 @@ spec:
   extendedMetrics: true
   deploymentEnvironment: staging
   adminPortalCredentialsRef:
-    name: admin-access-url-production
+    name: apicast-staging
   oidcLogLevel: info
   timezone: America/Lima
   replicas: 1

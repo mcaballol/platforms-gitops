@@ -24,7 +24,7 @@ spec:
   extendedMetrics: true
   deploymentEnvironment: production
   adminPortalCredentialsRef:
-    name: admin-access-url-production
+    name: apicast-production
   oidcLogLevel: info
   timezone: America/Lima
   replicas: 1
