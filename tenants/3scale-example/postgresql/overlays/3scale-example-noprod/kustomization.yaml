@@ -5,4 +5,4 @@ namespace: minio
 resources:
   - ../../base
 patchesStrategicMerge:
-  - patch-create-bucket-job.yaml
+  - patch-secret.yaml
