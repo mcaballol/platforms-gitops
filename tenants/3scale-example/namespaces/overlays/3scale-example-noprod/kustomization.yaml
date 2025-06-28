@@ -4,6 +4,7 @@ resources:
   - ../../base
   - 3scale-tenant-dev.yaml
   - 3scale-tenant-qa.yaml
+  - minio.yaml
 
 
 commonAnnotations:
