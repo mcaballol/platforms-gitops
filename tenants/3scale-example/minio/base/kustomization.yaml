@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - ../../../../components/apps/minio/overlays/default
+  - ../../../../components/apps/minio-bucket/overlays/default
