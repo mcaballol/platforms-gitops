@@ -4,10 +4,10 @@ kind: Kustomization
 labels:
   - includeSelectors: true
     pairs:
-      app: postgres
+      app: postgresql
   - includeSelectors: false
     pairs:
-      app.kubernetes.io/component: postgres
+      app.kubernetes.io/component: postgresql
 
 resources:
   - deployment.yaml
