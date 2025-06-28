@@ -1,0 +1,1 @@
+oc delete ApplicationSet tenants -n openshift-gitops
