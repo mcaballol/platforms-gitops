@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crunchy-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crunchy-postgres
+  template:
+    metadata:
+      labels:
+        app: crunchy-postgres
+    spec:
+      containers:
+        - resources: {}
+          name: postgres
+          image: postgres
+          envFrom:
+          - secretRef:
+              name: crunchy-postgres-secret
+          ports:
+          - containerPort: 5432
+          volumeMounts:
+          - name: pgdata
+            mountPath: /pgdata
+      volumes:
+      - name: pgdata
+        persistentVolumeClaim:
+          claimName: crunchy-postgres-pvc

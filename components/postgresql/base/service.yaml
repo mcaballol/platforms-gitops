@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crunchy-postgres
+spec:
+  selector:
+    app: crunchy-postgres
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: 5432
