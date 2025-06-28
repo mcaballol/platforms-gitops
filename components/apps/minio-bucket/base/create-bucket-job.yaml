@@ -28,15 +28,15 @@ spec:
         - /bin/sh
         - -c
         - |
-          echo "[INFO] Esperando hasta 5 minutos a que el endpoint ${S3_ENDPOINT} esté disponible..."
+          echo "[INFO] Esperando hasta 5 minutos a que MinIO esté disponible..."
 
           TIMEOUT=300
           INTERVAL=10
           ELAPSED=0
 
           while [ $ELAPSED -lt $TIMEOUT ]; do
-            if curl -s -o /dev/null --connect-timeout 2 "$S3_ENDPOINT"; then
-              echo "[INFO] Endpoint disponible tras $ELAPSED segundos."
+            if mc alias set minio "$S3_ENDPOINT" "$S3_ACCESS_KEY" "$S3_SECRET_KEY"; then
+              echo "[INFO] MinIO disponible tras $ELAPSED segundos."
               break
             fi
             sleep $INTERVAL
@@ -44,14 +44,11 @@ spec:
           done
 
           if [ $ELAPSED -ge $TIMEOUT ]; then
-            echo "[ERROR] El endpoint $S3_ENDPOINT no respondió en $TIMEOUT segundos."
+            echo "[ERROR] Timeout: MinIO no respondió en $TIMEOUT segundos."
             exit 1
           fi
 
-          echo "[INFO] Configurando alias 'minio'..."
-          mc alias set minio "$S3_ENDPOINT" "$S3_ACCESS_KEY" "$S3_SECRET_KEY"
-
-          echo "[INFO] Creando bucket '${S3_BUCKET}' si no existe..."
+          echo "[INFO] Creando bucket '$S3_BUCKET'..."
           mc mb --ignore-existing minio/"$S3_BUCKET"
 
-          echo "[INFO] Bucket creado o ya existía."
+          echo "[INFO] Bucket '$S3_BUCKET' creado o ya existía."
