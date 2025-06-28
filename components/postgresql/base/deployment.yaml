@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crunchy-postgres
+  name: postgresql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: crunchy-postgres
+      app: postgresql
   template:
     metadata:
       labels:
-        app: crunchy-postgres
+        app: postgresql
     spec:
       containers:
         - resources: {}
