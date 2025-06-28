@@ -26,3 +26,6 @@ rules:
   - apiGroups: [""]
     resources: ["secrets"]
     verbs: ["get", "list", "create", "delete"]
+  - apiGroups: ["route.openshift.io",""]
+    resources: ["routes"]
+    verbs: ["get", "list","watch"]
