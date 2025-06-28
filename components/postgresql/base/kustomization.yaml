@@ -12,7 +12,6 @@ labels:
 resources:
   - deployment.yaml
   - pvc.yaml
-  - routes.yaml
   - secret.yaml
   - service.yaml
 
