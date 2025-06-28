@@ -10,10 +10,12 @@ spec:
       - name: bucket-creator
         image: minio/mc:latest
         env:
+        - name: MC_CONFIG_DIR
+          value: /tmp/.mc
         - name: S3_ENDPOINT
           value: http://my-minio:9000  # Servicio MinIO en el mismo namespace
         - name: S3_BUCKET
-          value: mybucket  # Cambia por el nombre de tu bucket
+          value: my-bucket  # Cambia por el nombre de tu bucket
         - name: S3_ACCESS_KEY
           valueFrom:
             secretKeyRef:
