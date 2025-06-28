@@ -27,7 +27,7 @@ spec:
     name: apicast-production
   oidcLogLevel: info
   timezone: America/Lima
-  replicas: 1
+  replicas: 2
   managementAPIScope: status
   configurationLoadMode: lazy #boot
   cacheConfigurationSeconds: 0
