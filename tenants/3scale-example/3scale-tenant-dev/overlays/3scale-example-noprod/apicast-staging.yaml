@@ -1,7 +1,7 @@
 apiVersion: apps.3scale.net/v1alpha1
 kind: APIcast
 metadata:
-  name: sample-openid-dev-staging
+  name: apicast-staging
 spec:
   logLevel: info
   pathRoutingEnabled: false
@@ -24,7 +24,7 @@ spec:
   extendedMetrics: true
   deploymentEnvironment: staging
   adminPortalCredentialsRef:
-    name: dev-tenant-secret
+    name: admin-access-url-production
   oidcLogLevel: info
   timezone: America/Lima
   replicas: 1
