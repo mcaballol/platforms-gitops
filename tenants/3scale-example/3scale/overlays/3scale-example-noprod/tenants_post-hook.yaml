@@ -26,7 +26,7 @@ spec:
               elapsed=0
 
               while [[ $elapsed -lt $timeout ]]; do
-                if oc get route -A -l 'zync.3scale.net/route-to=system-master' --no-headers | grep -q .; then
+                if oc get route -n 3scale -l 'zync.3scale.net/route-to=system-master' --no-headers | grep -q .; then
                   echo "¡Ruta encontrada!"
                   exit 0
                 fi
