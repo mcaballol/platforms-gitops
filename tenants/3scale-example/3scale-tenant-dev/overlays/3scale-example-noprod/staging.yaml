@@ -1,0 +1,33 @@
+apiVersion: apps.3scale.net/v1alpha1
+kind: APIcast
+metadata:
+  name: sample-openid-dev-staging
+spec:
+  logLevel: info
+  pathRoutingEnabled: false
+  responseCodesIncluded: true
+  openSSLPeerVerificationEnabled: false
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    #limits:
+    #  cpu: '1'
+    #  memory: 128Mi
+    #requests:
+    #  cpu: 500m
+    #  memory: 64Mi
+  exposedHost:
+    host: bs-hello-java-openid-dev.apps.cluster-z44mr.z44mr.sandbox3222.opentlc.com
+    tls:
+      - {}
+  extendedMetrics: true
+  deploymentEnvironment: staging
+  adminPortalCredentialsRef:
+    name: dev-tenant-secret
+  oidcLogLevel: info
+  timezone: America/Lima
+  replicas: 1
+  managementAPIScope: status
+  configurationLoadMode: lazy #boot
+  cacheConfigurationSeconds: 0

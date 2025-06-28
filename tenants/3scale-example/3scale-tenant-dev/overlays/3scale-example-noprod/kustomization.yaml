@@ -4,5 +4,6 @@ kind: Kustomization
 resources:
   - dev-tenant.yaml
   - dev-admin-secret.yaml
+  - job-apicast-secret.yaml
 commonAnnotations:
     argocd.argoproj.io/sync-wave: "5"
