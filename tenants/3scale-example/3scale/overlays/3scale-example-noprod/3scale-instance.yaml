@@ -9,5 +9,13 @@ spec:
   wildcardDomain: apps.cluster-f78kj.dynamic.redhatworkshops.io
   system:
     fileStorage:
-      persistentVolumeClaim:
-        storageClassName: ocs-external-storagecluster-cephfs
+      persistent: false
+      s3:
+        bucket: system-storage
+        region: us-east-1
+        accessKeyId: minio
+        secretAccessKey: minio123
+        endpoint: http://minio.minio.svc:9000  # Cambia según el nombre del service y namespace
+        protocol: http
+        configuration:
+          s3ForcePathStyle: 'true'
