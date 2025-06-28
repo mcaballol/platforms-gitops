@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-minio-bucket
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: bucket-creator
+        image: minio/mc:latest
+        env:
+        - name: S3_ENDPOINT
+          value: http://my-minio:9000  # Servicio MinIO en el mismo namespace
+        - name: S3_BUCKET
+          value: mybucket  # Cambia por el nombre de tu bucket
+        - name: S3_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: minio  # Nombre del Secret con las claves
+              key: minio_root_user
+        - name: S3_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: minio
+              key: minio_root_password
+        command:
+        - /bin/sh
+        - -c
+        - |
+          echo "[INFO] Esperando hasta 5 minutos a que el endpoint ${S3_ENDPOINT} esté disponible..."
+
+          TIMEOUT=300
+          INTERVAL=10
+          ELAPSED=0
+
+          while [ $ELAPSED -lt $TIMEOUT ]; do
+            if curl -s -o /dev/null --connect-timeout 2 "$S3_ENDPOINT"; then
+              echo "[INFO] Endpoint disponible tras $ELAPSED segundos."
+              break
+            fi
+            sleep $INTERVAL
+            ELAPSED=$((ELAPSED + INTERVAL))
+          done
+
+          if [ $ELAPSED -ge $TIMEOUT ]; then
+            echo "[ERROR] El endpoint $S3_ENDPOINT no respondió en $TIMEOUT segundos."
+            exit 1
+          fi
+
+          echo "[INFO] Configurando alias 'minio'..."
+          mc alias set minio "$S3_ENDPOINT" "$S3_ACCESS_KEY" "$S3_SECRET_KEY"
+
+          echo "[INFO] Creando bucket '${S3_BUCKET}' si no existe..."
+          mc mb --ignore-existing minio/"$S3_BUCKET"
+
+          echo "[INFO] Bucket creado o ya existía."
