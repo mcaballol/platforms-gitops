@@ -4,6 +4,6 @@ namespace: minio
 
 resources:
   - ../../base
-
+  - ../../../../../components/apps/minio-bucket/overlays/default
 patchesStrategicMerge:
   - patch-create-bucket-job.yaml
