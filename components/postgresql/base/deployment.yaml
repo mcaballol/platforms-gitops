@@ -18,13 +18,13 @@ spec:
           image: postgres
           envFrom:
           - secretRef:
-              name: crunchy-postgres-secret
+              name: postgres-secret
           ports:
           - containerPort: 5432
           volumeMounts:
-          - name: pgdata
-            mountPath: /pgdata
+            - name: postgresql-data
+              mountPath: /var/lib/pgsql/data
       volumes:
       - name: pgdata
         persistentVolumeClaim:
-          claimName: crunchy-postgres-pvc
+          claimName: postgres-pvc

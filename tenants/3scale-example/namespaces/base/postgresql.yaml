@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/display-name: "postgresql"
+    openshift.io/description: "Red Hat build of postgresql"
+#    openshift.io/node-selector: node-role.kubernetes.io/worker-keycloak=
+  name: postgresql
