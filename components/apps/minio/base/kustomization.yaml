@@ -15,3 +15,6 @@ resources:
   - routes.yaml
   - secret.yaml
   - service.yaml
+
+commonAnnotations:
+    argocd.argoproj.io/sync-wave: "1"
