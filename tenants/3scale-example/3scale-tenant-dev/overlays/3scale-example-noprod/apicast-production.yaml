@@ -17,10 +17,10 @@ spec:
     #requests:
     #  cpu: 500m
     #  memory: 64Mi
-  exposedHost:
-    host: bs-hello-java-openid-dev-staging.apps.cluster-z44mr.z44mr.sandbox3222.opentlc.com
-    tls:
-      - {}
+  # exposedHost:
+  #   host: bs-hello-java-openid-dev-staging.apps.cluster-bcrk5.dynamic.redhatworkshops.io
+  #   tls:
+  #     - {}
   extendedMetrics: true
   deploymentEnvironment: production
   adminPortalCredentialsRef:

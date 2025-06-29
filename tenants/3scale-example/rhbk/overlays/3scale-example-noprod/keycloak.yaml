@@ -13,7 +13,7 @@ spec:
   #  requests:
   #    memory: 1700Mi
   hostname:
-    hostname: sso.apps.cluster-5pfhb.dynamic.redhatworkshops.io
+    hostname: sso.apps.cluster-bcrk5.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local
