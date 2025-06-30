@@ -13,7 +13,7 @@ spec:
   #  requests:
   #    memory: 1700Mi
   hostname:
-    hostname: keycloak.apps.cluster-bcrk5.dynamic.redhatworkshops.io
+    hostname: keycloak.apps.cluster-nq8nq.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local

@@ -8,7 +8,7 @@ metadata:
 
 spec:
   username: admin
-  systemMasterUrl: https://master.apps.cluster-bcrk5.dynamic.redhatworkshops.io
+  systemMasterUrl: https://master.apps.cluster-nq8nq.dynamic.redhatworkshops.io
   email: admin@ecorp.com
   organizationName: dev
   masterCredentialsRef:
