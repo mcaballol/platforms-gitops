@@ -1,0 +1,21 @@
+apiVersion: capabilities.3scale.net/v1alpha1
+kind: Tenant
+metadata:
+  name: dev-tenant
+  namespace: 3scale-tenant-dev
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+
+spec:
+  username: admin
+  systemMasterUrl: https://master.apps.cluster-f9vts.dynamic.redhatworkshops.io
+  email: admin@ecorp.com
+  organizationName: dev
+  masterCredentialsRef:
+    name: system-seed
+    namespace: 3scale
+  passwordCredentialsRef:
+    name: dev-admin-secret
+  tenantSecretRef:
+    name: dev-tenant-secret
+    

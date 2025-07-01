@@ -1,7 +1,7 @@
 apiVersion: apps.3scale.net/v1alpha1
 kind: APIcast
 metadata:
-  name: apicast-staging
+  name: production
 spec:
   logLevel: info
   pathRoutingEnabled: false
@@ -18,16 +18,16 @@ spec:
     #  cpu: 500m
     #  memory: 64Mi
   # exposedHost:
-  #   host: bs-hello-java-openid-dev.apps.cluster-bcrk5.dynamic.redhatworkshops.io
+  #   host: bs-hello-java-openid-dev-staging.apps.cluster-bcrk5.dynamic.redhatworkshops.io
   #   tls:
   #     - {}
   extendedMetrics: true
-  deploymentEnvironment: staging
+  deploymentEnvironment: production
   adminPortalCredentialsRef:
-    name: apicast-staging
+    name: apicast-production
   oidcLogLevel: info
   timezone: America/Lima
-  replicas: 1
+  replicas: 2
   managementAPIScope: status
   configurationLoadMode: lazy #boot
   cacheConfigurationSeconds: 0

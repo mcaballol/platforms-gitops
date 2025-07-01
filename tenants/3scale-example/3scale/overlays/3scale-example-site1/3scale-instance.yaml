@@ -1,0 +1,14 @@
+kind: APIManager
+apiVersion: apps.3scale.net/v1alpha1
+metadata:
+  name: apimanager-noprod
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  wildcardDomain: apps.cluster-f9vts.dynamic.redhatworkshops.io
+  system:
+    fileStorage:
+      simpleStorageService:
+        configurationSecretRef:
+          name: s3-auth

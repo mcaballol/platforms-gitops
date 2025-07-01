@@ -4,6 +4,9 @@ kind: Kustomization
 namespace: keycloak
 
 resources:
-  - ../../../../../components/operators/rhbk/overlays/stable-v26.2
+  - ../../base
+  - keycloak-db-secret.yaml
+
 patchesStrategicMerge:
   - patch-operator_operatorgroup.yaml
+  - keycloak.yaml

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/display-name: "minio"
+    openshift.io/description: "minio s3"
+#    openshift.io/node-selector: node-role.kubernetes.io/worker-3scale=
+  name: minio
