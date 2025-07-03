@@ -6,7 +6,6 @@ resources:
   - ../../base
   - dev-tenant.yaml
   - dev-admin-secret.yaml
-  - job-apicast-secret.yaml
   - apicast-production.yaml
   - apicast-staging.yaml
 # commonAnnotations:
