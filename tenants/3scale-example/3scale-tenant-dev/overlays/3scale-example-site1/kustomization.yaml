@@ -9,5 +9,5 @@ resources:
   - job-apicast-secret.yaml
   - apicast-production.yaml
   - apicast-staging.yaml
-commonAnnotations:
-    argocd.argoproj.io/sync-wave: "5"
+# commonAnnotations:
+#     argocd.argoproj.io/sync-wave: "5"

@@ -5,7 +5,7 @@ metadata:
   namespace: 3scale-tenant-dev
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   username: admin
   systemMasterUrl: https://master.apps.cluster-gmdqx.dynamic.redhatworkshops.io
