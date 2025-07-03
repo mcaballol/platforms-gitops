@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wait-and-generate-admin-url
+  labels: 
+    job: secret-generator
+spec:
+  template:
+    spec:
+      containers:
+      - name: generator
+        env:
+        - name: SOURCE_SECRET
+          value: dev-tenant-secret
+        - name: TARGET_SECRET
+          value: apicast
+        - name: SECRET_NAMESPACE
+          value: 3scale-tenant-dev

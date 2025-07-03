@@ -13,11 +13,11 @@ spec:
         image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
         env:
         - name: SOURCE_SECRET
-          value: dev-tenant-secret
+          value: my-tenant-secret
         - name: TARGET_SECRET
           value: apicast
         - name: SECRET_NAMESPACE
-          value: 3scale-tenant-dev
+          value: my-tenant
         command:
         - /bin/bash
         - -c
