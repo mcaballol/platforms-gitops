@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/hook: PreSync
 spec:
   username: admin
-  systemMasterUrl: https://master.apps.cluster-gmdqx.dynamic.redhatworkshops.io
+  systemMasterUrl: https://master.apps-crc.testing
   email: admin@ecorp.com
   organizationName: dev
   masterCredentialsRef:
