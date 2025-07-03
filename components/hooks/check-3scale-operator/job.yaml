@@ -12,22 +12,25 @@ spec:
       containers:
         - name: check-operator
           image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+          env:
+          - name: SUBSCRIPTION_NAME
+            value: my-operator
           command:
             - /bin/bash
             - -c
             - |
-              echo "Esperando que el operador Red Hat Integration - 3scale esté instalado..."
-              STARTINGCSV=$(oc get subscriptions.operators.coreos.com 3scale-operator -o jsonpath='{.spec.startingCSV}')
+              echo "Esperando que el operador $SUBSCRIPTION_NAME esté instalado..."
+              STARTINGCSV=$(oc get subscriptions.operators.coreos.com "$SUBSCRIPTION_NAME" -o jsonpath='{.spec.startingCSV}')
               for i in {1..30}; do
                 STATUS=$(oc get csv "${STARTINGCSV}" -o jsonpath='{.status.phase}')
 
                 if [[ "$STATUS" != "Succeeded" ]]; then
-                  echo "[Intento $i] El operador Red Hat Integration - 3scale aún no está instalado. Esperando 30s..."
+                  echo "[Intento $i] El operador $SUBSCRIPTION_NAME aún no está instalado. Esperando 30s..."
                   sleep 30
                   continue
                 fi
                 
-                echo "El operador Red Hat Integration - 3scale está instalado correctamente"
+                echo "El operador $SUBSCRIPTION_NAME está instalado correctamente"
                 exit 0
               done
 

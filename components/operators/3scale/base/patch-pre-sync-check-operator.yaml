@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pre-sync-check-operator
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      serviceAccountName: hook-sa
+      containers:
+        - name: check-operator
+          image: image-registry.openshift-image-registry.svc:5000/openshift/cli:latest
+          env:
+          - name: SUBSCRIPTION_NAME
+            value: my-operator
+          command:
+            - /bin/bash
+            - -c
+            - |
+              echo "Esperando que el operador $SUBSCRIPTION_NAME esté instalado..."
+              STARTINGCSV=$(oc get subscriptions.operators.coreos.com "$SUBSCRIPTION_NAME" -o jsonpath='{.spec.startingCSV}')
+              for i in {1..30}; do
+                STATUS=$(oc get csv "${STARTINGCSV}" -o jsonpath='{.status.phase}')
+
+                if [[ "$STATUS" != "Succeeded" ]]; then
+                  echo "[Intento $i] El operador $SUBSCRIPTION_NAME aún no está instalado. Esperando 30s..."
+                  sleep 30
+                  continue
+                fi
+                
+                echo "El operador $SUBSCRIPTION_NAME está instalado correctamente"
+                exit 0
+              done
+
+              echo "Timeout esperando que el operador esté instalado"
+              exit 1
+      restartPolicy: Never
