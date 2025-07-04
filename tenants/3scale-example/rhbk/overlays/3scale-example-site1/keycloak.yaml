@@ -13,7 +13,7 @@ spec:
   #  requests:
   #    memory: 1700Mi
   hostname:
-    hostname: keycloak.apps-crc.testing
+    hostname: keycloak.apps.cluster-gmdqx.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local
