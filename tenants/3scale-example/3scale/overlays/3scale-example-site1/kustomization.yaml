@@ -6,7 +6,6 @@ resources:
   - ../../base
   - 3scale-instance.yaml
   - 3s-auth.yaml
-  #- tenants_post-hook.yaml
-
+  
 commonAnnotations:
     argocd.argoproj.io/sync-wave: "4"
