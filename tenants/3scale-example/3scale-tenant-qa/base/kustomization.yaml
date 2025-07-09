@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../../../components/hooks/wait-and-generate-admin-url
+
+patches:
+  - path: patch-wait-and-generate-admin-url.yaml

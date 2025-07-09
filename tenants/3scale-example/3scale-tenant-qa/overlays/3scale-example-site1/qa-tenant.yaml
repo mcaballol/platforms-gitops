@@ -1,0 +1,22 @@
+apiVersion: capabilities.3scale.net/v1alpha1
+kind: Tenant
+metadata:
+  name: qa-tenant
+  namespace: 3scale-tenant-qa
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook: PreSync
+spec:
+  username: admin
+  systemMasterUrl: https://master.apps.cluster-nkqmx.dynamic.redhatworkshops.io
+  email: admin@ecorp.com
+  organizationName: qa
+  masterCredentialsRef:
+    name: system-seed
+    namespace: 3scale
+  passwordCredentialsRef:
+    name: qa-admin-secret
+  tenantSecretRef:
+    name: qa-tenant-secret
+    
