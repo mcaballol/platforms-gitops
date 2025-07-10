@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "3"
 spec:
-  wildcardDomain: apps.cluster-nkqmx.dynamic.redhatworkshops.io
+  wildcardDomain: apps.cluster-25gxt.dynamic.redhatworkshops.io
   system:
     fileStorage:
       simpleStorageService:
