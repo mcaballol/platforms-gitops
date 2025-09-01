@@ -21,7 +21,7 @@ spec:
     #   value: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   hostname:
     hostname: keycloak.apps.cluster-ctjt5.dynamic.redhatworkshops.io
-#    admin: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
+    admin: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local
