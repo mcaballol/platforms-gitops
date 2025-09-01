@@ -12,6 +12,11 @@ spec:
   #    memory: 2Gi
   #  requests:
   #    memory: 1700Mi
+  httpManagement:
+    port: 9001
+  additionalOptions:
+    - name: http-management-relative-path
+      value: /management
   hostname:
     hostname: keycloak.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   db:
