@@ -17,9 +17,11 @@ spec:
   additionalOptions:
     - name: http-management-relative-path
       value: /management
+    - name: hostname-admin
+      value: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   hostname:
     hostname: keycloak.apps.cluster-ctjt5.dynamic.redhatworkshops.io
-    hostname-admin: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
+  #  hostname-admin: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local
