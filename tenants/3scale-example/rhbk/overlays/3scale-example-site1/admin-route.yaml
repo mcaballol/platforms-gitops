@@ -4,6 +4,9 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
     haproxy.router.openshift.io/set-header: 'Permissions-Policy: geolocation=(),camera=(),microphone=()'
+    haproxy.router.openshift.io/rewrite-rules: |
+      http-response add-header Permissions-Policy geolocation=(),camera=(),microphone=()
+      http-request add-header Permissions-Policy geolocation=(),camera=(),microphone=()
   name: keycloak-ingress-admin
 spec:
   host: keycloak-adm.apps.cluster-vt5rq.dynamic.redhatworkshops.io
