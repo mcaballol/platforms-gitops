@@ -3,6 +3,7 @@ apiVersion: route.openshift.io/v1
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    haproxy.router.openshift.io/set-header: 'Permissions-Policy: geolocation=(),camera=(),microphone=()'
   name: keycloak-ingress-admin
 spec:
   host: keycloak-adm.apps.cluster-vt5rq.dynamic.redhatworkshops.io
