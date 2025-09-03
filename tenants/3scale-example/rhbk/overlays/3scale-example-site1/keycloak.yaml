@@ -20,8 +20,8 @@ spec:
     # - name: hostname-admin
     #   value: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   hostname:
-    hostname: https://keycloak.apps.cluster-ctjt5.dynamic.redhatworkshops.io
-    admin: https://keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
+    hostname: https://keycloak.apps.cluster-vt5rq.dynamic.redhatworkshops.io
+    admin: https://keycloak-adm.apps.cluster-vt5rq.dynamic.redhatworkshops.io
   db:
     vendor: postgres
     host: postgresql.postgresql.svc.cluster.local
