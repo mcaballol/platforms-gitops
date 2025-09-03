@@ -21,7 +21,7 @@ spec:
     #   value: keycloak-int.apps.cluster-ctjt5.dynamic.redhatworkshops.io
   ingress:
     annotations:
-      haproxy.router.openshift.io/set-header:'Permissions-Policy: geolocation=(),camera=(),microphone=()'
+      haproxy.router.openshift.io/set-header: 'Permissions-Policy: geolocation=(),camera=(),microphone=()'
   hostname:
     hostname: https://keycloak.apps.cluster-vt5rq.dynamic.redhatworkshops.io
     admin: https://keycloak-adm.apps.cluster-vt5rq.dynamic.redhatworkshops.io
